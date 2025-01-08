@@ -3,12 +3,13 @@ from tkinter import messagebox, ttk, filedialog  # Added filedialog
 import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
-import pandas as pd  # Added pandas
+import pandas as pd  
 
 # Welcome screen
 def welcome_screen():
     messagebox.showinfo(
         "Welcome to Central Tendency Calculator",
+        "Hello COME400!\n"
         "This tool will help you calculate measures of central tendency and dispersion.\n\n"
         "For Ungrouped data:\n1. Enter numbers separated by commas.\n"
         "   OR\n2. Import a CSV file with a single column of numbers.\n\n"
@@ -22,7 +23,6 @@ def toggle_fields(*args):
     if data_type.get() == "Ungrouped":
         label.pack()
         entry_data.pack()
-        btn_import.pack_forget()  # Hide import button for grouped data
         label_groups.pack_forget()
         entry_data_groups.pack_forget()
         label_frequencies.pack_forget()
@@ -34,7 +34,10 @@ def toggle_fields(*args):
         entry_data_groups.pack()
         label_frequencies.pack()
         entry_groups.pack()
-        btn_import.pack()  # Show import button for grouped data
+    
+    # Always show the Import CSV button
+    btn_import.pack()
+
 
 # Function to import CSV
 def import_csv():
