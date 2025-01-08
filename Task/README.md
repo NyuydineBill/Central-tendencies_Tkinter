@@ -32,6 +32,10 @@ This is a **Central Tendency Calculator** built using **Python** and **Tkinter**
    ```bash
    pip install numpy scipy matplotlib pandas tk
    ```
+   Or simply run:
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. Run the program:
    ```bash
    python central_tendency_calculator.py
